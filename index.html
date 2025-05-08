@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayam Geprek Mbak Lesti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Ayam Geprek Mbak Lesti</h1>
+        <p>Makanan Rumahan Lezat, Terjangkau & Pastinya Pas Dikantong</p>
+    </header>
+
+    <section class="menu">
+        <h2>Form Pemesanan</h2>
+        <form id="order-form">
+            <input type="text" id="nama" placeholder="Nama Anda" required><br><br>
+            <input type="text" id="menu" placeholder="Menu yang Dipesan" required><br><br>
+            <input type="number" id="jumlah" placeholder="Jumlah" required><br><br>
+            <textarea id="catatan" placeholder="Catatan Tambahan"></textarea><br><br>
+            <button type="submit">Kirim Pesanan via WhatsApp</button>
+        </form>
+
+        <h2>Daftar Menu</h2>
+        <p><strong>HARGA MULAI Rp. 13.000</strong> / Sudah Termasuk Nasi</p>
+        <ul>
+            <li>Ayam Geprek</li>
+            <li>Bebek Bumbu Hitam</li>
+            <li>Sego Babat</li>
+            <li>Ayam Goreng</li>
+            <li>Lele Geprek</li>
+            <li>Ikan Mujaer</li>
+            <li>Ikan Dorang</li>
+            <li>Ikan Panggang</li>
+            <li>Ati Ampela</li>
+            <li>Kulit Ayam</li>
+            <li>Tahu, Tempe, Terong</li>
+            <li>Sambal Bawang</li>
+            <li>Sambal Tomat</li>
+        </ul>
+    </section>
+
+    <section class="kontak">
+        <h2>Kontak</h2>
+        <p>Alamat: Jl. Kyai Tambak Deres No.65, RT.001/RW.02, Bulak, Kec. Bulak, Surabaya, Jawa Timur 60124</p>
+        <p>WhatsApp: 0877-6220-4797</p>
+        <a href="https://wa.me/6287762204797?text=Halo%20Mbak%20Lesti,%20saya%20ingin%20pesan%20makanan." target="_blank" class="wa-button">Pesan via WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; Ayam Geprek Mbak Lesti</p>
+    </footer>
+
+    <script>
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama').value;
+            const menu = document.getElementById('menu').value;
+            const jumlah = document.getElementById('jumlah').value;
+            const catatan = document.getElementById('catatan').value;
+
+            const pesan = `Halo Mbak Lesti, saya ingin pesan:
+Nama: ${nama}
+Menu: ${menu}
+Jumlah: ${jumlah}
+Catatan: ${catatan}`;
+
+            const url = `https://wa.me/6287762204797?text=${encodeURIComponent(pesan)}`;
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
